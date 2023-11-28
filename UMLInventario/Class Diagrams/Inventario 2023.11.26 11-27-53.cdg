@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Inventario">
+  <ClassDiagramComponents>
+    <Class name="BaseDatos" package="BaseDatos" visibility="public" xPosition="218.0" yPosition="591.0">
+      <Fields>
+        <Field name="conn" type="Connection" visibility="package" isStatic="true"/>
+        <Field name="stmt" type="Statement" visibility="package" isStatic="true"/>
+        <Field name="st" type="PreparedStatement" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="esteblecerConexion" returnType="Connection" visibility="public" isStatic="true"/>
+        <Method name="crearTablas" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="cerrar" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="insertarLibro" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="insertarEstudiante" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Estudiante" name="estudiante"/>
+        </Method>
+        <Method name="buscarLibro" returnType="String" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="buscarLibro" returnType="String" visibility="public" isStatic="true">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="modificarEstado" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="modificarEstado" returnType="void" visibility="public" isStatic="true">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="entregarLibro" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="recibirLibro" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pantalla" package="PanelGrafico" visibility="public" xPosition="21.0" yPosition="23.0">
+      <Fields>
+        <Field name="btnBuscarLibro" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnConectar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnConfirmar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="labelBuscarAlumno" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelBuscarLibro" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelConectar" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelEstado" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelIdLibro" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelMostrarEstado" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="labelNombreLibro" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="panelDerecha" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="panelIzquierda" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="textAlumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="textBuscarLibroId" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="textBuscarLibroNombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnConectarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnConfirmarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBuscarLibroActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Biblioteca" package="Principal" visibility="public" xPosition="1182.0" yPosition="591.0">
+      <Fields>
+        <Field name="cantidadLibros" type="int" visibility="public"/>
+        <Field name="libros" type="ArrayList&lt;Libro&gt;" visibility="public"/>
+        <Field name="nombre" type="String" visibility="public"/>
+        <Field name="instance" type="Biblioteca" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarLibros" returnType="void" visibility="public"/>
+        <Method name="entregarLibro" returnType="void" visibility="public">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="guardarLibro" returnType="void" visibility="public">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="getInstance" returnType="Biblioteca" visibility="public" isStatic="true">
+          <Argument type="String" name="nombre"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Estudiante" package="Principal" visibility="public" xPosition="739.0" yPosition="332.0">
+      <Fields>
+        <Field name="listaLibros" type="ArrayList&lt;Libro&gt;" visibility="package"/>
+        <Field name="cantidadLibros" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="retirarLibro" returnType="void" visibility="public">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="devolverLibro" returnType="void" visibility="public">
+          <Argument type="Libro" name="libro"/>
+        </Method>
+        <Method name="getDatos" returnType="void" visibility="public"/>
+        <Method name="getLibros" returnType="void" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getCantidadLibros" returnType="int" visibility="public"/>
+        <Method name="setCantidadLibros" returnType="void" visibility="public">
+          <Argument type="int" name="cantidadLibros"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Fabrica" package="Principal" visibility="public" isAbstract="true" xPosition="867.0" yPosition="16.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="factoryMethod" returnType="Persona" visibility="public" isAbstract="true">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="FabricaConcreta" package="Principal" visibility="public" xPosition="1305.0" yPosition="16.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="id" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="factoryMethod" returnType="Persona" visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Libro" package="Principal" visibility="public" xPosition="710.0" yPosition="785.0">
+      <Fields>
+        <Field name="titulo" type="String" visibility="public"/>
+        <Field name="genero" type="String" visibility="public"/>
+        <Field name="id" type="int" visibility="public"/>
+        <Field name="año" type="int" visibility="public"/>
+        <Field name="autor" type="String" visibility="public"/>
+        <Field name="estado" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titulo"/>
+          <Argument type="String" name="genero"/>
+          <Argument type="int" name="id"/>
+          <Argument type="int" name="año"/>
+          <Argument type="String" name="autor"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitulo" returnType="String" visibility="public"/>
+        <Method name="getGenero" returnType="String" visibility="public"/>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getAño" returnType="int" visibility="public"/>
+        <Method name="getAutor" returnType="String" visibility="public"/>
+        <Method name="getEstado" returnType="String" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="Principal" visibility="public" isAbstract="true" xPosition="1234.0" yPosition="241.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="package"/>
+        <Field name="apellido" type="String" visibility="package"/>
+        <Field name="id" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="retirarLibro" returnType="void" visibility="public"/>
+        <Method name="devolverLibro" returnType="void" visibility="public"/>
+        <Method name="getDatos" returnType="void" visibility="public"/>
+        <Method name="getLibros" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="Principal" visibility="public" xPosition="65.0" yPosition="1047.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Principal.Fabrica" target="Principal.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Principal.FabricaConcreta" target="Principal.Fabrica"/>
+    <UseRelation source="Principal.Biblioteca" target="Principal.Biblioteca" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instance" source="Principal.Biblioteca" target="Principal.Biblioteca" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Principal.Biblioteca" target="Principal.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Principal.Estudiante" target="Principal.Persona"/>
+    <UseRelation source="Principal.FabricaConcreta" target="Principal.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listaLibros" source="Principal.Estudiante" target="Principal.Libro" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Libro&gt;"/>
+    <UseRelation source="BaseDatos.BaseDatos" target="Principal.Estudiante" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="BaseDatos.BaseDatos" target="Principal.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="libros" source="Principal.Biblioteca" target="Principal.Libro" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Libro&gt;"/>
+    <UseRelation source="Principal.Estudiante" target="Principal.Libro" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
