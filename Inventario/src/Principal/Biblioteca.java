@@ -37,6 +37,8 @@ public class Biblioteca {
         } else {
             System.out.println(libro.titulo + " no se encuentra disponible en este momento");
         }
+        
+        cantidadLibros--;
 
     }
 

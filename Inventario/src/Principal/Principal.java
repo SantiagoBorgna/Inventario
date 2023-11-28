@@ -7,7 +7,8 @@ public class Principal {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         
-//        Pantalla pantalla = new Pantalla().setVisible(true);
+        //BaseDatos.BaseDatos.crearTablas();
+        
         //Libro primero = new Libro("Harry Potter y la piedra filosofal", "Fantasía", 1, 1997, "J.K.Rowling");
         //Libro segundo = new Libro("La divina comedia", "Historia", 2, 1321, "Dante Alighieri");
         
@@ -27,12 +28,7 @@ public class Principal {
             }
         });
         
-        Biblioteca uno =  Biblioteca.getInstance("uno");
-
-        
-        //uno.mostrarLibros();
-        //estudiante1.retirarLibro();
-        //uno.mostrarLibros();
+        //Biblioteca uno =  Biblioteca.getInstance("uno");
     }
     
 }
